@@ -17,6 +17,13 @@
   ],
   "author": "shodan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/junohm410/simple_triple_column_technique.git"
+  },
+  "bugs": {
+    "url": "https://github.com/junohm410/simple_triple_column_technique/issues"
+  },
   "devDependencies": {
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
