@@ -1,5 +1,6 @@
 import inquirer from "inquirer";
 import { thoughtPatterns } from "./thoughtPatterns.js";
+const blankCharRegExp = /^[\s\u3000]+$/;
 
 const main = async () => {
   const canUserStart = await confirmUserCanStart();
@@ -40,6 +41,13 @@ const askForInputtingProblem = async () => {
       "あなたが抱える悩みと、それを考えたときに湧き上がる気持ちを書いてください。\n",
     default:
       "1ヶ月前に勉強を始めたプログラミングが全然うまくいかない。自分はいつもこうなる、何の才能もない。",
+    validate(answer) {
+      if (blankCharRegExp.test(answer)) {
+        return "まとまっていなくてもいいので、できれば何かを書いてみてください。アプリを終了したい場合は Control+C を入力してください。";
+      }
+
+      return true;
+    },
   });
   return answer.problem;
 };
@@ -60,7 +68,7 @@ const askForSelectingThoughtPatterns = async () => {
     type: "checkbox",
     name: "thoughtPatterns",
     message:
-      "悩みの気持ちに関して、当てはまると思う認知の歪みを一つ以上選んでください。\n",
+      "悩みの気持ちに関して、当てはまると思う認知のゆがみを一つ以上選んでください。\n",
     choices: thoughtPatterns.map((pattern) => `${pattern.id}. ${pattern.name}`),
     pageSize: 10,
     validate(answer) {
@@ -93,6 +101,13 @@ const askForInputtingRationalReaction = async () => {
       "悩みの気持ちに対する、合理的な反応（自分への擁護）を書いてください。\n",
     default:
       "勉強を始める前はターミナルの開き方も知らなかった。\nつまり、初めてから全く成長していないわけではない。私は「全てか無か」思考におちいっていた。\nまた、「自分はいつもこうなる、何の才能もない」と思ったが、今の悩みはあくまでプログラミングについて。\nつまり、他のことや過去・未来のことまで悪くなったわけではない。これは「拡大解釈（破滅化）」だった。",
+    validate(answer) {
+      if (blankCharRegExp.test(answer)) {
+        return "まとまっていなくてもいいので、できれば何かを書いてみてください。アプリを終了したい場合は Control+C を入力してください。";
+      }
+
+      return true;
+    },
   });
   return answer.rationalReaction;
 };
@@ -114,7 +129,7 @@ const displayTripleColumn = (problem, thoughtPatterns, RationalReaction) => {
   console.log();
   console.log("==========================================================\n");
   console.log(
-    "このようなワークを通して自分の認知のゆがみに気づくことは、ネガティブな気持ちにとられそうになったときの有効な対策の一つです。",
+    "このようなワークを通して自分の認知のゆがみに気づくことは、ネガティブな気持ちにとらわれそうになったときの有効な対策の一つです。",
   );
   console.log("心に無理のない範囲で、日常に取り入れてみてくださいね。");
 };
