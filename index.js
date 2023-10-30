@@ -1,9 +1,16 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
+import minimist from "minimist";
 import { thoughtPatterns } from "./thoughtPatterns.js";
 const blankCharRegExp = /^[\s\u3000]+$/;
 
 const main = async () => {
+  const options = minimist(process.argv.slice(2));
+  if (options.l) {
+    displayThoughtPattern();
+    return;
+  }
+
   const canUserStart = await confirmUserCanStart();
   if (!canUserStart) {
     console.log(
@@ -115,7 +122,9 @@ const askForInputtingRationalReaction = async () => {
 
 const displayTripleColumn = (problem, thoughtPatterns, RationalReaction) => {
   console.log();
-  console.log(chalk.bold("おつかれさまでした!今回のワークの全体をまとめます。\n"));
+  console.log(
+    chalk.bold("おつかれさまでした!今回のワークの全体をまとめます。\n"),
+  );
   console.log("==========================================================");
   console.log(chalk.bold("あなたの悩み:\n"));
   console.log(problem);
