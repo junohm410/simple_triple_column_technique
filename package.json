@@ -1,6 +1,6 @@
 {
   "name": "simple_triple_column_technique",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "a command line application which provides a simple way to conduct triple column techniques in Cognitive Behavior Therapy (known as CBT)",
   "main": "index.js",
   "bin": {
