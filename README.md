@@ -23,6 +23,7 @@ $ simple_triple_column_technique
 see also: https://en.wikipedia.org/wiki/Cognitive_distortion
 
 ### `-l`option
+
 Using `-l` option, you can also only check the list of cognitive distortions without doing the work.
 
 ![image](https://github.com/junohm410/simple_triple_column_technique/assets/128765400/b616e437-6528-46cc-a64b-07ad94ff7c37)
@@ -30,6 +31,8 @@ Using `-l` option, you can also only check the list of cognitive distortions wit
 ```
 simple_triple_column_technique -l
 ```
+
+\*The list of cognitive distortions in this application was quoted from (Burns, 1980/2013, p.35), see also references below.
 
 ## Note
 
