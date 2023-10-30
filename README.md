@@ -2,7 +2,7 @@
 
 This application provides a simple way to conduct _triple column techniques_ in Cognitive Behavior Therapy (known as CBT) on command line.
 
-## Instal
+## Install
 
 ```
 $ npm install -g simple_triple_column_technique
