@@ -141,7 +141,9 @@ const displayTripleColumn = (problem, thoughtPatterns, RationalReaction) => {
   console.log(
     "自分の認知のゆがみに気づき、合理的な擁護をしてあげることはできましたか。",
   );
-  console.log("心が疲れているときは、無理をせずに休むことも大切です。それではまた。");
+  console.log(
+    "心が疲れているときは、無理をせずに休むことも大切です。それではまた。",
+  );
 };
 
 main();
