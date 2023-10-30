@@ -1,0 +1,1 @@
+# simple_triple_column_technique
